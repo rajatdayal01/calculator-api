@@ -8,7 +8,7 @@ app.use(express.urlencoded());
 app.use(express.json());
 
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(bodyParser.json())
 // your code goes here
@@ -30,10 +30,11 @@ app.post('/add',(req,res)=>{
                 message:`Overflow`
             })
         }else{
+            let resa=num1+num2;
             return res.json({
                 status:`success`,
                 message:`the sum of given two number is`,
-                sum:`${num1}+${num2}`
+                sum:`${resa}`
             })
         }
     }
@@ -53,10 +54,11 @@ app.post('/sub',(req,res)=>{
                 message:`Underflow`
             })
         }else{
+            let resa=num1-num2;
             return res.json({
                 status:`success`,
                 message:`the difference of given two number`,
-                sum:`${num1}-${num2}`
+                sum:`${resa}`
             })
         }
     }
@@ -76,10 +78,11 @@ app.post('/multiply',(req,res)=>{
                 message:`Overflow`
             })
         }else{
+            let resa=num1*num2;
             return res.json({
                 status:`success`,
                 message:`The product of given numbers`,
-                sum:`${num1}*${num2}`
+                sum:`${resa}`
             })
         }
     }
@@ -99,10 +102,11 @@ app.post('/division',(req,res)=>{
                 message:`Cannot divide by zero`
             })
         }else{
+            let resa=num1/num2;
             return res.json({
                 status:`success`,
                 message:`the sum of given two number is`,
-                sum:`${num1}/${num2}`
+                sum:`${resa}`
             })
         }
     }
